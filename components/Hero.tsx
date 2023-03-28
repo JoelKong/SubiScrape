@@ -8,6 +8,11 @@ function Hero() {
         <div className={classes.brand}>
           <span className={classes.brandname}>ScrapeGPT</span>
         </div>
+        <div>
+          <p className={classes.brandtext}>
+            Simplifying website information into multiple formats
+          </p>
+        </div>
       </main>
     </Container>
   );

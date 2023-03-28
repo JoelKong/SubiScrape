@@ -1,7 +1,8 @@
 .section {
   display: flex;
-  justify-content: center;
+  align-items: center;
   height: 100vh;
+  flex-direction: column;
 }
 
 .brand {
@@ -18,4 +19,10 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   -moz-background-clip: text;
+}
+
+.brandtext {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
 }
