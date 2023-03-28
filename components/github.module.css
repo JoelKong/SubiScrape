@@ -1,0 +1,30 @@
+.icon {
+  display: flex;
+  max-width: fit-content;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5rem;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: #d1d5db;
+  background-color: #fff;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #4b5563;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 4rem;
+  text-decoration: none;
+}
+
+.icon:hover {
+  background-color: #e0e2e4;
+}
+
+.icontext {
+  padding-left: 8px;
+}

@@ -1,13 +1,12 @@
 .section {
   display: flex;
   align-items: center;
-  height: 100vh;
   flex-direction: column;
 }
 
 .brand {
   height: max-content;
-  padding-top: 10%;
+  padding-top: 1.2rem;
 }
 
 .brandname {

@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
+import Github from "../../components/Github";
 import Hero from "../../components/Hero";
+import { Container } from "@mui/system";
 
 const inter = Inter({ subsets: ["latin"] });
 //inter.className
@@ -7,7 +9,12 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Container maxWidth="lg">
+        <main className="section">
+          <Github />
+          <Hero />
+        </main>
+      </Container>
     </>
   );
 }

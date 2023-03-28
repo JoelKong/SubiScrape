@@ -113,3 +113,10 @@ a {
   margin: 0;
   font-family: "Inter", sans-serif;
 }
+
+.section {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
