@@ -9,7 +9,6 @@
 
 .form {
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: row;
   margin-top: 1rem;
   width: 100%;
