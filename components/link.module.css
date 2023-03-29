@@ -16,4 +16,10 @@
 
 .button {
   margin-left: 0.5rem;
+  cursor: pointer;
+  height: 2.4rem;
+}
+
+.buttonspan {
+  padding-right: 0.5rem;
 }
