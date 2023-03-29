@@ -1,3 +1,13 @@
 .section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding-top: 5rem;
+  min-width: 50%;
+}
+
+.textfield {
+  margin-top: 1rem;
+  width: 100%;
 }
