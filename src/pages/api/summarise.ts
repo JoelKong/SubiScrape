@@ -82,60 +82,59 @@ const { JSDOM } = jsdom;
 //   return stream;
 // }
 
-async function handler(req: any) {
+async function handler(req: any, res: any) {
   let mainContent;
-  if (req.method === "POST") {
-    const { inputLink } = req.body;
+  const { inputLink } = req.body;
 
-    if (!inputLink) {
-      return new Response("Input Link Not Found!", { status: 400 });
-    }
-
-    await axios.get(inputLink).then((response) => {
-      const $ = cheerio.load(response.data);
-      const doc = new JSDOM(response.data, { inputLink }).window.document;
-      const article = new Readability(doc).parse();
-      mainContent = article!.content.replace(/<[^>]*>?/gm, "");
-    });
-
-    const generate = await axios.post("http://localhost:3000/api/generate", {
-      mainContent,
-    });
-
-    console.log(generate.data);
-
-    //    await fetch("http://localhost:3000/api/generate", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({ mainContent }),
-    //     })
-
-    // const payload: OpenAIStreamPayload = {
-    //   model: "gpt-3.5-turbo",
-    //   messages: [
-    //     {
-    //       role: "system",
-    //       content: "You are an AI whose main role is to summarise text.",
-    //     },
-    //     {
-    //       role: "user",
-    //       content: `Summarise this briefly: ${mainContent}`,
-    //     },
-    //   ],
-    //   temperature: 0,
-    //   top_p: 1,
-    //   frequency_penalty: 2,
-    //   presence_penalty: -2,
-    //   max_tokens: 300,
-    //   stream: true,
-    //   n: 1,
-    // };
-
-    // const stream = await OpenAIStream(payload);
-    // return new Response(stream);
+  if (!inputLink) {
+    return new Response("Input Link Not Found!", { status: 400 });
   }
+
+  await axios.get(inputLink).then((response) => {
+    const $ = cheerio.load(response.data);
+    const doc = new JSDOM(response.data, { inputLink }).window.document;
+    const article = new Readability(doc).parse();
+    mainContent = article!.content.replace(/<[^>]*>?/gm, "");
+  });
+
+  return res.status(200).json({ mainContent });
+  // return new Response(mainContent);
+
+  // const generate = await axios.post("http://localhost:3000/api/generate", {
+  //   mainContent,
+  // });
+
+  //    await fetch("http://localhost:3000/api/generate", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ mainContent }),
+  //     })
+
+  // const payload: OpenAIStreamPayload = {
+  //   model: "gpt-3.5-turbo",
+  //   messages: [
+  //     {
+  //       role: "system",
+  //       content: "You are an AI whose main role is to summarise text.",
+  //     },
+  //     {
+  //       role: "user",
+  //       content: `Summarise this briefly: ${mainContent}`,
+  //     },
+  //   ],
+  //   temperature: 0,
+  //   top_p: 1,
+  //   frequency_penalty: 2,
+  //   presence_penalty: -2,
+  //   max_tokens: 300,
+  //   stream: true,
+  //   n: 1,
+  // };
+
+  // const stream = await OpenAIStream(payload);
+  // return new Response(stream);
 }
 
 export default handler;

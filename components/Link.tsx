@@ -21,12 +21,22 @@ function Link(): JSX.Element {
       return;
     }
 
-    const response = await fetch("/api/summarise", {
+    const responseSummarise = await fetch("/api/summarise", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ inputLink }),
+    });
+
+    const { mainContent } = await responseSummarise.json();
+
+    const response = await fetch("/api/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ mainContent }),
     });
 
     if (!response.ok) {
