@@ -8,23 +8,51 @@ function Link(): JSX.Element {
   const [inputLink, setInputLink] = useState<String>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
+  const [result, setResult] = useState<String>("");
 
   async function submitLink(e: React.FormEvent) {
     e.preventDefault();
+    setLoading(true);
     if (error) setError(false);
 
     if (!inputLink) {
       setError(true);
+      setLoading(false);
       return;
     }
 
-    const summariseLink = await fetch("/api/summarise", {
+    const response = await fetch("/api/summarise", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(inputLink),
+      body: JSON.stringify({ inputLink }),
     });
+
+    if (!response.ok) {
+      const errorMessage = await response.text();
+      setLoading(false);
+      return;
+    }
+
+    const data = response.body;
+    if (!data) {
+      return;
+    }
+
+    const reader = data.getReader();
+    const decoder = new TextDecoder();
+    let done = false;
+    setResult("");
+
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      done = doneReading;
+      const chunkValue: any = decoder.decode(value);
+      setResult((prev) => prev + chunkValue);
+    }
+
+    setLoading(false);
   }
 
   return (
@@ -59,6 +87,7 @@ function Link(): JSX.Element {
           )}
         </LoadingButton>
       </form>
+      <p>{result}</p>
     </section>
   );
 }
