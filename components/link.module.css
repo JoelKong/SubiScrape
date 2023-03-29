@@ -7,7 +7,14 @@
   min-width: 50%;
 }
 
-.textfield {
+.form {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
   margin-top: 1rem;
   width: 100%;
+}
+
+.button {
+  margin-left: 0.5rem;
 }
