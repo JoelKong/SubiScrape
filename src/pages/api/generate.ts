@@ -87,11 +87,12 @@ async function handler(req: any) {
       messages: [
         {
           role: "system",
-          content: "You are an AI whose main role is to summarise text.",
+          content:
+            "You are an AI whose main role is to summarise the article and make sure that your summary covers all the main points mentioned in the article.",
         },
         {
           role: "user",
-          content: `Summarise this briefly: ${mainContent}`,
+          content: `Summarise this briefly and make sure that the summary covers all the main points mentioned in the article: ${mainContent}`,
         },
       ],
       temperature: 0,
