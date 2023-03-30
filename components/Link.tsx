@@ -93,7 +93,6 @@ function Link(): JSX.Element {
         <form className={classes.form} onSubmit={submitLink}>
           <fieldset disabled={disable} className={classes.form}>
             <TextField
-              autoFocus
               error={error}
               onChange={(e) => setInputLink(e.target.value)}
               value={inputLink}
