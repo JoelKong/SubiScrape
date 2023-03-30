@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import classes from "./result.module.css";
 
-function Result({ result }: JSX.Element) {
+function Result({ result }: any) {
   const [isDisplayed, setIsDisplayed] = useState(false);
 
   const copy = async () => {
