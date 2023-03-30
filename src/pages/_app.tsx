@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 const darkTheme = createTheme({
   palette: {
@@ -62,6 +63,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Component {...pageProps} />
+        <Analytics />
       </ThemeProvider>
     </>
   );
