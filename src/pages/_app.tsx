@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
           property="og:description"
           content="The best website summary AI. Simply input a link and the AI will summarise the content for you. 100% free and efficient!"
         />
-        <meta property="og:url" content="https://www.subiregex.com/" />
+        <meta property="og:url" content="https://www.scrapegpt.net/" />
         <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico"></link>

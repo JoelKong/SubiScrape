@@ -15,7 +15,7 @@
 }
 
 .button {
-  margin-left: 0.6rem;
+  margin-left: 0.6rem !important;
   cursor: pointer;
   height: 2.4rem;
   background-color: rgb(144, 202, 249);
