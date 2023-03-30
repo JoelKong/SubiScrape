@@ -1,23 +1,16 @@
-import { Container } from "@mui/system";
-import classes from "./hero.module.css";
+import classes from "./hero.module.css"
 
 function Hero(): JSX.Element {
   return (
-    <Container maxWidth="lg">
-      <section className={classes.section}>
-        <div className={classes.brand}>
-          <span className={classes.brandname}>ScrapeGPT</span>
-        </div>
-        <div>
-          <p className={classes.brandtext}>
-            Simplifying website information
-            <br />
-            into short summaries
-          </p>
-        </div>
-      </section>
-    </Container>
-  );
+    <>
+      <h1 className="sm:text-6xl mt-5 text-4xl max-w-[708px] font-bold text-white">
+        <span className={classes.titleGradient}>SubiScrape</span>
+      </h1>
+      <p className="text-slate-500 mt-5 text-lg">
+        Simplifying website information into short summaries 📝
+      </p>
+    </>
+  )
 }
 
-export default Hero;
+export default Hero

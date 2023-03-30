@@ -27,6 +27,12 @@
   text-align: center;
 }
 
+.titleGradient {
+  background: -webkit-linear-gradient(#11d3f3, #adfda2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @media screen and (max-width: 500px) {
   .brandtext {
     font-size: 17px;
