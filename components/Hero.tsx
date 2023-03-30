@@ -12,7 +12,7 @@ function Hero(): JSX.Element {
           <p className={classes.brandtext}>
             Simplifying website information
             <br />
-            into multiple formats
+            into short summaries
           </p>
         </div>
       </section>
