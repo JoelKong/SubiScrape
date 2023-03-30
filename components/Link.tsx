@@ -84,6 +84,7 @@ function Link(): JSX.Element {
         <p>Input the link that you wish to summarise information from.</p>
         <form className={classes.form} onSubmit={submitLink}>
           <TextField
+            autoFocus
             error={error}
             onChange={(e) => setInputLink(e.target.value)}
             value={inputLink}
