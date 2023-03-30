@@ -1,0 +1,9 @@
+.result {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 500px) {
+  .result {
+    font-size: 15px;
+  }
+}

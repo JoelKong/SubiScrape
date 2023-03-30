@@ -112,7 +112,7 @@ function Link(): JSX.Element {
           </LoadingButton>
         </form>
       </section>
-      <Result result={result} />
+      {result && <Result result={result} />}
     </>
   );
 }
