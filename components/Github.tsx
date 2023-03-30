@@ -1,4 +1,5 @@
 import classes from "./github.module.css";
+import Image from "next/image";
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -17,14 +18,29 @@ function GithubIcon({ className }: { className?: string }) {
 
 function Github(): JSX.Element {
   return (
-    <a
-      className={classes.icon}
-      href="https://github.com/JoelKong/ScrapeGPT/"
-      target="_blank"
-    >
-      <GithubIcon />
-      <p className={classes.icontext}>Star on GitHub</p>
-    </a>
+    <div className={classes.icons}>
+      <a
+        className={classes.icon}
+        href="https://github.com/JoelKong/ScrapeGPT/"
+        target="_blank"
+      >
+        <GithubIcon />
+        <p className={classes.icontext}>Star on GitHub</p>
+      </a>
+      <a
+        href="https://ko-fi.com/joelkong"
+        target="_blank"
+        className={classes.kofi}
+      >
+        <Image
+          src="https://storage.ko-fi.com/cdn/kofi2.png?v=3"
+          alt="Buy Me a Coffee at ko-fi.com"
+          style={{ border: "0px" }}
+          height={40}
+          width={155}
+        />
+      </a>
+    </div>
   );
 }
 

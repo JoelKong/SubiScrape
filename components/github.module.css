@@ -28,3 +28,14 @@
 .icontext {
   padding-left: 8px;
 }
+
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  width: 600px;
+}
+
+.kofi {
+  margin-top: 4rem;
+}
