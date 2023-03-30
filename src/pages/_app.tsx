@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>
-          ScrapeGPT - Simplifying website information into short summaries |
+          SubiScrape - Simplifying website information into short summaries |
           Website Summary AI | Free and efficient
         </title>
         <meta
@@ -24,13 +24,13 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           name="og:title"
-          content="ScrapeGPT - Simplifying website information into short summaries | Website Summary AI | Free and efficient"
+          content="SubiScrape - Simplifying website information into short summaries | Website Summary AI | Free and efficient"
         />
         <meta
           property="og:description"
           content="The best website summary AI. Simply input a link and the AI will summarise the content for you. 100% free and efficient!"
         />
-        <meta property="og:url" content="https://www.scrapegpt.net/" />
+        <meta property="og:url" content="https://www.subiscrape.com/" />
         <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico"></link>
