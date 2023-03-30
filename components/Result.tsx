@@ -32,8 +32,8 @@ function Result({ result }: any) {
       )}
       <div className={classes.result}>{result}</div>
       <span className="flex absolute h-5 w-5 top-0 right-0 -mt-1 -mr-1">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-85"></span>
-        <span className="relative inline-flex rounded-full h-5 w-5 bg-purple-500"></span>
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-85"></span>
+        <span className="relative inline-flex rounded-full h-5 w-5 bg-green-500"></span>
       </span>
     </div>
   );
