@@ -11,19 +11,24 @@ function Link(): JSX.Element {
   const [error, setError] = useState<boolean>(false);
   const [result, setResult] = useState<String>("");
   const [errorText, setErrortext] = useState<String>("");
+  const [disable, setDisabled] = useState<boolean>(false);
 
   async function submitLink(e: React.FormEvent) {
     e.preventDefault();
+    setDisabled(true);
+
     setLoading(true);
     if (error) {
       setError(false);
       setErrortext("");
+      setDisabled(false);
     }
 
     if (!inputLink) {
       setError(true);
       setErrortext("Please input a link.");
       setLoading(false);
+      setDisabled(false);
       return;
     }
 
@@ -41,6 +46,7 @@ function Link(): JSX.Element {
       setErrortext(result);
       setError(true);
       setLoading(false);
+      setDisabled(false);
       return;
     }
 
@@ -55,6 +61,7 @@ function Link(): JSX.Element {
     if (!response.ok) {
       const errorMessage = await response.text();
       setLoading(false);
+      setDisabled(false);
       return;
     }
 
@@ -76,6 +83,7 @@ function Link(): JSX.Element {
     }
 
     setLoading(false);
+    setDisabled(false);
   }
 
   return (
@@ -83,34 +91,35 @@ function Link(): JSX.Element {
       <section className={classes.section}>
         <p>Input the link that you wish to summarise information from.</p>
         <form className={classes.form} onSubmit={submitLink}>
-          <TextField
-            autoFocus
-            error={error}
-            onChange={(e) => setInputLink(e.target.value)}
-            value={inputLink}
-            id="outlined-basic"
-            label="Link"
-            variant="outlined"
-            placeholder="E.g. medium.com"
-            size="small"
-            helperText={error && errorText}
-            fullWidth
-          />
-
-          <LoadingButton
-            onClick={submitLink}
-            className={classes.button}
-            endIcon={<SendIcon />}
-            loading={loading}
-            loadingPosition="end"
-            variant="contained"
-          >
-            {loading ? (
-              <span className={classes.buttonspan}>Loading</span>
-            ) : (
-              <span>Go</span>
-            )}
-          </LoadingButton>
+          <fieldset disabled={disable} className={classes.form}>
+            <TextField
+              autoFocus
+              error={error}
+              onChange={(e) => setInputLink(e.target.value)}
+              value={inputLink}
+              id="outlined-basic"
+              label="Link"
+              variant="outlined"
+              placeholder="E.g. medium.com"
+              size="small"
+              helperText={error && errorText}
+              fullWidth
+            />
+            <LoadingButton
+              onClick={submitLink}
+              className={classes.button}
+              endIcon={<SendIcon />}
+              loading={loading}
+              loadingPosition="end"
+              variant="contained"
+            >
+              {loading ? (
+                <span className={classes.buttonspan}>Loading</span>
+              ) : (
+                <span>Go</span>
+              )}
+            </LoadingButton>
+          </fieldset>
         </form>
       </section>
       {result && <Result result={result} />}
