@@ -4,7 +4,7 @@ A web scraping application which summarizes scraped information using OpenAI's G
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/joelkong)
 
-![SubiScrape](/assets/subiscrape.PNG)
+![SubiScrape](/assets/SubiScrape.PNG)
 
 ## Application Code
 ### Technology Stack
@@ -16,4 +16,4 @@ Deployed with: Vercel
 ## Generating a Summary through scraped information
 Users can input a link which contains relevant information/articles/reports and the AI model would then be able to generate a summary from the scraped information.
 
-![Summary](/assets/summary.gif)
+![Summary](/assets/Summary.gif)
