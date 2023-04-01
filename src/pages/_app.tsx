@@ -34,6 +34,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content="https://www.subiscrape.com/" />
         <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="google-site-verification"
+          content="UPJHz6_aiE3YlBWNBUEGqpaUbeuYE0tWXCde-_zmM0o"
+        />
         <link rel="icon" href="/favicon.ico"></link>
         <link
           rel="apple-touch-icon"
